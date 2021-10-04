@@ -1,6 +1,6 @@
 import * as React from "react"
 import Game from '../src/game_template';
-import {Board,InfoBoard} from '../src/ten/ten';
+import {Board,InfoBoard} from '../src/connect6/connect6';
 
 
 const Page = () => {

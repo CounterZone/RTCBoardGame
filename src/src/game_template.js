@@ -105,10 +105,20 @@ class Game extends React.Component{
     }
   constructor(props){
     super(props);
-    this.peer=new RTCPeer();
+
     this.log_count=0;
     this.state={"logs":[],"gameState":this.props.initialGameState,channelOpened:false};
 
+
+
+    this.gameBoard=React.createRef();
+    this.gameInfoPanel=React.createRef();
+  }
+    send(msg){
+    this.peer.send(msg);
+  }
+    componentDidMount(){
+    this.peer=new RTCPeer();
     this.peer.onopen=(e)=>{
       this.log(this,"Channel Opened!");
       this.setState({'channelOpened':true})
@@ -126,14 +136,7 @@ class Game extends React.Component{
         this.gameInfoPanel.current.onMove(msg_obj.content);
       }
     }
-
-    this.gameBoard=React.createRef();
-    this.gameInfoPanel=React.createRef();
-  }
-    send(msg){
-    this.peer.send(msg);
-  }
-
+    }
 
 
     sendChat(self,msg){
@@ -160,17 +163,17 @@ class Game extends React.Component{
     }
     async host(self){
       await self.peer.setupLocal();
-      prompt("Please copy the code",self.peer.get_token());
+      prompt("Please copy the code and send to the remote player",self.peer.get_token());
       self.log(self,"Offer generated!");
     };
 
     async connect(self){
-      var token=prompt('Please enter the code from remote peer','');
+      var token=prompt('Please enter the code from the remote peer','');
       if (token==null){return;}
       var ans=await self.peer.connectToHost(token);
 
       if (ans!==undefined){
-      prompt("Please copy the answer code",ans);
+      prompt("Please copy the answer code from the remote peer",ans);
       self.log(self,"Answer generated!");
       }
     };
