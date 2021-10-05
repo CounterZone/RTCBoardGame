@@ -3,5 +3,6 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "rtc_boardgame",
   },
+  pathPrefix: "/RTCBoardGame",
   plugins: [],
 };
