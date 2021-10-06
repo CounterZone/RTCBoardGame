@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrtc_boardgame=self.webpackChunkrtc_boardgame||[]).push([[883],{9616:function(e,t,n){n.r(t);var a=n(7294);t.default=function(){return a.createElement("main",null,a.createElement("title",null,"Not found"),a.createElement("h1",null,"Page not found"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-a6cf98a95cd9f0f8e137.js.map
