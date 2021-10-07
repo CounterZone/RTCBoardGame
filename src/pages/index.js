@@ -1,5 +1,6 @@
 import * as React from "react"
 import {Row,Container,Col} from 'react-bootstrap';
+import { withPrefix } from "gatsby"
 
 class GameInfoRow extends React.Component{
   render(){
@@ -50,9 +51,9 @@ const IndexPage = () => {
       <title>Games</title>
       <Container>
       <hr />
-      <GameInfoRow gameLink="ultimate-tic-tac-toe" gameName="ultimate-tic-tac-toe" imagePath="../images/ten.png" introduction={ten_intro} />
+      <GameInfoRow gameLink="ultimate-tic-tac-toe" gameName="ultimate-tic-tac-toe" imagePath={withPrefix("/ten.png")} introduction={ten_intro} />
       <hr />
-      <GameInfoRow gameLink="connect6" gameName="connect_6" imagePath="../images/c6.png" introduction={c6_intro} />
+      <GameInfoRow gameLink="connect6" gameName="connect_6" imagePath={withPrefix("/c6.png")} introduction={c6_intro} />
       <hr />
       </Container>
     </main>
