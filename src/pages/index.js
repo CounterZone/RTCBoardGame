@@ -50,9 +50,9 @@ const IndexPage = () => {
       <title>Games</title>
       <Container>
       <hr />
-      <GameInfoRow gameLink="ultimate-tic-tac-toe" gameName="ultimate-tic-tac-toe" imagePath="/ten.png" introduction={ten_intro} />
+      <GameInfoRow gameLink="ultimate-tic-tac-toe" gameName="ultimate-tic-tac-toe" imagePath="../images/ten.png" introduction={ten_intro} />
       <hr />
-      <GameInfoRow gameLink="connect6" gameName="connect_6" imagePath="/c6.png" introduction={c6_intro} />
+      <GameInfoRow gameLink="connect6" gameName="connect_6" imagePath="../images/c6.png" introduction={c6_intro} />
       <hr />
       </Container>
     </main>
